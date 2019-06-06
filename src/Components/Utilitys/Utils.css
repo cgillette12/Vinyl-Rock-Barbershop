@@ -1,5 +1,5 @@
 .toggle-button {
-    display: hidden;
+    /* display: hidden; */
     flex-direction: column;
     justify-content: space-around;
     height:24px;
@@ -28,4 +28,7 @@
     background: rgba(0, 0, 0, 0.3);
     z-index: 100;
 
+}
+.Service-container{
+ align-content: left;
 }

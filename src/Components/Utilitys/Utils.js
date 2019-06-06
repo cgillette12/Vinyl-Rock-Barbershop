@@ -21,10 +21,10 @@ export class ServiceButtons extends Component {
     }
 
     renderServices() {
-        return this.state.barberServices.map(barber => {
+        return this.state.barberServices.map((barber ,key)  => {
             return <button
                 onClick={(e) => this.handleSelectServiceType(e, barber)}
-                key={barber.id} >
+                id={barber.id} key= {key} >
                 <h3>{barber.type}</h3>
                 <p>{barber.price} 45min</p>
             </button>
@@ -164,9 +164,9 @@ export class ServiceList extends Component {
             })
     }
     renderServices() {
-        return this.state.barberServices.map(barber => {
-            return <ul>
-                <li  key={barber.id} >
+        return this.state.barberServices.map((barber, key) => {
+            return <ul className='service-list' key={key}>
+                <li className="service-list-item">
                     <p>
                       {barber.type}........{barber.price}
                    </p>
@@ -177,7 +177,7 @@ export class ServiceList extends Component {
     }
     render() {
         return (
-            <div>
+            <div className='Service-container'>
                 {this.renderServices()}
             </div>
         )

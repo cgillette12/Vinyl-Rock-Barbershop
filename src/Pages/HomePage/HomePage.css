@@ -9,7 +9,7 @@
     justify-content: center;
     margin-bottom:60px;
 }
-section {
+.title{
     color: white;
     justify-content: center;
     position: absolute;
@@ -29,7 +29,7 @@ p {
     font-size: 22px;
 }
 button{
-    background:rgba(0, 0, 0, 0.0);
+    /* background:rgba(0, 0, 0, 0.0); */
     border:none;
     margin-bottom: 15px;
    
