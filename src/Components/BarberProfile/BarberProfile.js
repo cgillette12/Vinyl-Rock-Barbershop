@@ -44,12 +44,7 @@ export default class BarberProfile extends Component {
             barber_id: id
         }
         AppointmentApiService.postAppointment(newAppointment)
-        .then(res => {
-            if(res){
-                console.log('accepeted')
-            }
         
-        })
             
         }
         

@@ -102,9 +102,6 @@ export class SideNavButton extends Component {
                 <div className='SideNav-button-line' />
                 <div className='SideNav-button-line' />
                 <div className='SideNav-button-line' />
-                {/* <div className='sideNav-dropdown' >
-                    <SideNavDrawer />
-                </div> */}
                 </section>
             </div >
         )
