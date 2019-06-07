@@ -93,25 +93,26 @@ export class SideNavButton extends Component {
       this.setState( prevState => ({
           dropdownToggled: !prevState.dropdownToggled
       }))
-
+      
     }
     render() {
         return (
-            <div className='SideNav-button' onClick={this.handleDropdownToggle}>
+            <div className={`SideNav-button ${this.state.dropdownToggled && 'active'}`} onClick={this.handleDropdownToggle}>
                 <section className='nav-dropdown-button'>
                 <div className='SideNav-button-line' />
                 <div className='SideNav-button-line' />
                 <div className='SideNav-button-line' />
                 </section>
+                <SideNavDrawer active={this.state.dropdownToggled}/>
             </div >
-        )
+        )   
     }
 }
 
 export class SideNavDrawer extends Component {
     render() {
         return (
-            <nav className='side-drawer'>
+            <nav className={`side-drawer ${this.props.active && 'active'}`}>
                 <ul>
                     <li>
                         <Link to="/">
