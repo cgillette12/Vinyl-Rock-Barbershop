@@ -32,7 +32,7 @@ export default class LoginForm extends Component {
             })
     }
     render() {
-        const {error} = this.state
+        const { error } = this.state
         return (
             <div>
                 <form
@@ -45,27 +45,28 @@ export default class LoginForm extends Component {
                     <label className='userName'>
                         User Name
                     </label>
-                    <input  
-                        type='text' 
-                        placeholder='Cody_Gill...' 
-                        name='user_name' 
+                    <input
+                        type='text'
+                        placeholder='Cody_Gill...'
+                        name='user_name'
                         required
                     />
                     <label className='Password'>
                         Password
                     </label>
-                    <input 
-                        type='password' 
-                        name='password' 
-                        required 
+                    <input
+                        type='password'
+                        name='password'
+                        required
                     />
-                    {/* <p>Forgot Password ?<button>Click here</button></p> */}
-                    <button type='submit'>
-                        Login
-                    </button>
-                    <Link to='/Register'>
-                        Register 
-                    </Link>
+                    <div className='submit-login-section'>
+                        <Link to='/Register'>
+                            Register
+                        </Link>
+                        <button type='submit'>
+                            Login
+                        </button>
+                    </div>
                 </form>
             </div>
         )

@@ -1,6 +1,5 @@
 .loginPage{
     display: flex;
-    /* height: 100%; */
     width: 100%;
     background-image: url(/static/media/backgroundpicture.959c450b.jpg);
     background-size: cover;
@@ -36,4 +35,23 @@ input{
 }
 button:hover {
   opacity: 0.8;
+}
+.submit-login-section{
+    display: flex;
+     justify-content: space-evenly;
+    align-items: center;
+}
+.login-section button {
+    padding: 15px 35px;
+    margin:10px;
+}
+.login-section  a{
+    text-decoration: underline;
+    color:white;
+    font-size:22px;
+    font-weight: 600;
+}
+
+.login-section a:hover{
+    color: rgba(255, 0, 0, 0.502)
 }
