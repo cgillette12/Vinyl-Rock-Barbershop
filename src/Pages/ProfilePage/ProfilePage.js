@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import AppointmentApiService from '../../Services/appointment-api-service'
+import './ProfilePage.css'
+
 
 
 export default class ProfilePage extends Component {
@@ -34,9 +36,10 @@ export default class ProfilePage extends Component {
 
     render() {
         return (
-            <div>
+            <div className='profile-container'>
+                <section className='profile-section'>
                 <h1>My Profile</h1>
-                <h3>appointments</h3>
+                <h2>Appointments</h2>
                 <table>
                     <tbody>
                     <tr>
@@ -47,6 +50,7 @@ export default class ProfilePage extends Component {
                     {this.renderProfile()}
                     </tbody>
                 </table>
+                </section>
             </div>
         )
     }

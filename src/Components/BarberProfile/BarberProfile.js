@@ -57,8 +57,8 @@ export default class BarberProfile extends Component {
     render() {
         const { first_name } = this.state.barberInfo
         return (
-            <div className='barber-profile-container'>
-            <section className='barber-profile-section'>
+            <div className='profile-container'>
+            <section className='profile-section'>
                 <h1>{first_name}</h1>
                 <form className='service-time-list'
                     onSubmit={this.handleSelectedServices}

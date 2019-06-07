@@ -1,4 +1,4 @@
-.barber-profile-container{
+.profile-container{
     display: flex;
     height: 100%;
     width: 100%;
@@ -10,9 +10,8 @@
     margin-bottom: 60px;
 
 }
-.barber-profile-section{
+.profile-section{
     color: silver;
-    justify-content: center;
     margin-top:55px;
     display:flex;
     height: 100%;
@@ -22,26 +21,26 @@
     align-content:center;
     text-align: left;
 }
-.barber-profile-section form{
+.profile-section form{
     display: flex;
     flex-direction: column;
     flex: 1;
     width: 100%;
 }
-.barber-profile-section .submit-haircut{
+.profile-section .submit-haircut{
    margin-top:50px;
    padding:35px;
 }
-.barber-profile-section button{
+.profile-section button{
     margin:3px;
 }
-.barber-profile-section p {
+.profile-section p {
     font-size: 12px;
 }
-.barber-profile-section  h1  {
+.profile-section  h1  {
     color:white;
 }
-.barber-profile-section  h2  {
+.profile-section  h2  {
     color:white;
 }
     
