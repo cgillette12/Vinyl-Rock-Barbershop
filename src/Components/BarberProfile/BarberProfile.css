@@ -1,0 +1,48 @@
+.barber-profile-container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-image: url(/static/media/backgroundpicture.959c450b.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    justify-content: center;
+    margin-bottom: 60px;
+
+}
+.barber-profile-section{
+    color: silver;
+    justify-content: center;
+    margin-top:55px;
+    display:flex;
+    height: 100%;
+    width: 100%;
+    line-height: 1.5;
+    flex-direction: column;
+    align-content:center;
+    text-align: left;
+}
+.barber-profile-section form{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+}
+.barber-profile-section button{
+    margin: 0 3px;
+}
+.barber-profile-section p {
+    font-size: 12px;
+}
+.barber-profile-section  h1  {
+    color:white;
+}
+.barber-profile-section  h2  {
+    color:white;
+}
+ .submit-haircut{
+    padding:35px;
+}
+    
+

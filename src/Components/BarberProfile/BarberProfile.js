@@ -5,6 +5,7 @@ import BarberApiService from '../../Services/barber-api-service'
 
 
 import { TimeButtons, ServiceButtons } from '../Utilitys/Utils'
+import './BarberProfile.css'
 
 export default class BarberProfile extends Component {
     state = {
@@ -53,27 +54,25 @@ export default class BarberProfile extends Component {
         }
         
 
-    
-
-
-
     render() {
         const { first_name } = this.state.barberInfo
         return (
-            <div>
+            <div className='barber-profile-container'>
+            <section className='barber-profile-section'>
                 <h1>{first_name}</h1>
                 <form className='service-time-list'
                     onSubmit={this.handleSelectedServices}
                 ><div className='service-list'>
-                        <h3>Choose your Service</h3>
+                        <h2>Choose your Service</h2>
                         <ServiceButtons name='services' serviceId={this.handleServiceType} />
                     </div>
                     <div className='time-list'>
-                        <h3>Pick Time</h3>
+                        <h2>Pick Time</h2>
                         <TimeButtons name='time' timeId={this.handleSelectTime} />
                     </div>
-                    <button type='submit'>Review/Book</button>
+                    <button  className='submit-haircut' type='submit'>Review/Book</button>
                 </form>
+                </section>
             </div>
         )
     }
