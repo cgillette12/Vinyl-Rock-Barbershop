@@ -1,4 +1,4 @@
-.toggle-button {
+.SideNav-button {
     cursor: pointer;
     outline: none;
     position: fixed;
@@ -7,12 +7,12 @@
     transition: opacity 0.2s linear;
 }
 
-.toggle-button:hover {
+.SideNav-button:hover {
     opacity: 0.8;
 }
 
 
-.toggle-button-line {
+.SideNav-button-line {
     width: 25px;
     height: 4px;
     background: white;
@@ -29,7 +29,7 @@
 }
 
 @media only screen and (min-width: 570px) {
-    .toggle-button {
+    .SideNav-button {
         display: none;
     }
 }

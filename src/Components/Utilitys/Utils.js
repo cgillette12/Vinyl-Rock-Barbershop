@@ -85,13 +85,25 @@ export class TimeButtons extends Component {
 
 
 
-export class SideNavToggleButton extends Component {
+export class SideNavButton extends Component {
+    state = {
+        dropdownToggled: false
+    }
+    handleDropdownToggle = () => {
+      this.setState( prevState => ({
+          dropdownToggled: !prevState.dropdownToggled
+      }))
+      console.log(this.state)
+    }
     render() {
         return (
-            <div className='toggle-button'>
-                <div className='toggle-button-line' />
-                <div className='toggle-button-line' />
-                <div className='toggle-button-line' />
+            <div className='SideNav-button' onClick={  this.handleDropdownToggle}>
+                <div className='SideNav-button-line' />
+                <div className='SideNav-button-line' />
+                <div className='SideNav-button-line' />
+                {/* <div className='sideNav-dropdown'>
+                    <SideNavButton/>
+                </div> */}
             </div >
         )
     }

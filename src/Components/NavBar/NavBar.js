@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-import { SideNavToggleButton } from '../Utilitys/Utils'
+import { SideNavButton } from '../Utilitys/Utils'
 import TokenService from '../../Services/token-service'
 import './NavBar.css'
 
@@ -52,9 +52,8 @@ export default class NavBar extends Component {
             </li>
           </ul>
         </div>
-          <div className='side-button'>
-            <SideNavToggleButton />
-          </div>
+          <SideNavButton />
+        
       </nav>
     )
   }

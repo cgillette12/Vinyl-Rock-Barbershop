@@ -10,7 +10,7 @@ import NavBar from '../NavBar/NavBar'
 import ProfilePage from '../../Pages/ProfilePage/ProfilePage';
 import RegisterPage from '../../Pages/RegisterPage/RegisterPage'
 import ServiceMenuPage from '../../Pages/ServiceMenuPage/ServiceMenuPage'
-import { SideNavToggleButton  } from '../Utilitys/Utils'
+import { SideNavButton  } from '../Utilitys/Utils'
 import './App.css';
 
 export default class App extends Component {
@@ -26,7 +26,7 @@ export default class App extends Component {
       <div className='main-container'>
         <header className='Nav-header'>
           <NavBar />
-          <SideNavToggleButton/>
+          <SideNavButton/>
         </header>
         <main role='main' className='vinyl-main'>
           {this.state.hasError && <p className='red'>There was an error!</p>}
