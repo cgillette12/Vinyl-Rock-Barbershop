@@ -93,17 +93,19 @@ export class SideNavButton extends Component {
       this.setState( prevState => ({
           dropdownToggled: !prevState.dropdownToggled
       }))
-      console.log(this.state)
+
     }
     render() {
         return (
-            <div className='SideNav-button' onClick={  this.handleDropdownToggle}>
+            <div className='SideNav-button' onClick={this.handleDropdownToggle}>
+                <section className='nav-dropdown-button'>
                 <div className='SideNav-button-line' />
                 <div className='SideNav-button-line' />
                 <div className='SideNav-button-line' />
-                {/* <div className='sideNav-dropdown'>
-                    <SideNavButton/>
+                {/* <div className='sideNav-dropdown' >
+                    <SideNavDrawer />
                 </div> */}
+                </section>
             </div >
         )
     }
