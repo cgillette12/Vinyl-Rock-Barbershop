@@ -1,0 +1,22 @@
+.registerPage{
+    display: flex;
+    /* height: 100%; */
+    width: 100%;
+    background-image: url(/static/media/backgroundpicture.959c450b.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    justify-content: center;
+    margin-bottom: 60px;
+
+}
+.registation-section {
+    color: white;
+    justify-content: center;
+    display:flex;
+    height: 100%;
+    line-height: 1.5;
+    flex-direction: column;
+    align-content:center;
+    text-align: left;
+}
