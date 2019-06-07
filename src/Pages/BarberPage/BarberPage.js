@@ -7,7 +7,7 @@ export default class BarberPage extends Component {
 
     render() {
         return (
-            <div className='Barber-container'>
+            <div className='profile-container'>
                 <section className='Barber-section'>
 
                     <h1>Pick Your Pro</h1>

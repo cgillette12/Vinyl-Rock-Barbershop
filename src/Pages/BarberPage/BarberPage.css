@@ -11,11 +11,12 @@
 
 }
 .Barber-section{
-    color: silver;
-    justify-content: center;
+     color: silver;
+    margin-top:55px;
     display:flex;
     height: 100%;
-    line-height: 1.5;
+    width: 100%;
+    line-height: 1.4;
     flex-direction: column;
     align-content:center;
     text-align: left;

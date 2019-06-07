@@ -20,6 +20,9 @@
     align-content:center;
     text-align: left;
 }
+.Service-menu-list h1{
+    color:white;
+}
 .Service-menu-list ul{
     padding-left:10px;
 }
