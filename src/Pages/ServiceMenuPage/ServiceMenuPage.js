@@ -7,7 +7,7 @@ export default class ServiceMenuPage extends Component {
         return (
             <div className='ServiceMenu-container'>
                 <section className='Service-menu-list'>
-                <h1> Service Manu </h1>
+                <h1> Service Menu </h1>
                 <ServiceList/>
                 </section>
             </div>
