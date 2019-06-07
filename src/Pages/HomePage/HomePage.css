@@ -10,10 +10,8 @@
     margin-bottom:100px;
 }
 .title{
-    margin-top:55px;
     color: silver;
     justify-content: center;
-    position: absolute;
     display:flex;
     height: 100%;
     line-height: 1.5;
