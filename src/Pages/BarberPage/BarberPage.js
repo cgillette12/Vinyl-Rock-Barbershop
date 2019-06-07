@@ -8,12 +8,12 @@ export default class BarberPage extends Component {
     render() {
         return (
             <div className='Barber-container'>
-                <div className='Barber-list'>
+                <section className='Barber-section'>
 
                     <h1>Pick Your Pro</h1>
                     <p> Only next day appointments</p>
                     <BarberList />
-                </div>
+                </section>
             </div>
         )
     }

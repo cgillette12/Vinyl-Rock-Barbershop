@@ -1,16 +1,52 @@
 .Barber-container{
     display: flex;
-    height:100%;
+    height: 100%;
     width: 100%;
     background-image: url(/static/media/backgroundpicture.959c450b.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
     justify-content: center;
-    margin-bottom:60px;
+    margin-bottom: 60px;
 
 }
-.Barber-list{
-    margin-top:55px;
+.Barber-section{
+    color: silver;
+    justify-content: center;
+    display:flex;
+    height: 100%;
+    line-height: 1.5;
+    flex-direction: column;
+    align-content:center;
+    text-align: left;
+}
+.Barber-section h1{
+    color:white;
 }
 
+.Barber-section ul{
+    padding-left:10px;
+}
+
+.Barber-section p {
+    margin: 0;
+    font-size: 18px;
+}
+.Barber-section ul li{
+    list-style: none;
+    text-align: left;
+    padding:0
+}
+.Barber-section a {
+    margin-top:8px;
+    font-size: 22px;
+    text-decoration: none;
+    color:white
+}
+.Barber-section a:hover,
+.Barber-section a:active{
+    color: rgba(255, 0, 0, 0.502)
+}
+.Barber-wrapper{
+    margin-top:5px;
+}

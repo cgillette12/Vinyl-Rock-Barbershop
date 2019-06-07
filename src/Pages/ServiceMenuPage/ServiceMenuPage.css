@@ -11,9 +11,14 @@
 
 }
 .Service-menu-list{
-    position: absolute;
-    color: brown;
-    margin-top:55px;
+    color: silver;
+    justify-content: center;
+    display:flex;
+    height: 100%;
+    line-height: 1.5;
+    flex-direction: column;
+    align-content:center;
+    text-align: left;
 }
 .Service-menu-list ul{
     padding-left:10px;

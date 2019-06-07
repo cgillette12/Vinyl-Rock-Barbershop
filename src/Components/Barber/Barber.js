@@ -6,7 +6,7 @@ export default class Barber extends Component {
     render() {
         const { barber } = this.props
         return (
-            <div>
+            <div className='Barber-wrapper'>
                 <li>
                     <Link to={`/BarbersProfile/${barber.id}`}>
                         {barber.first_name}
