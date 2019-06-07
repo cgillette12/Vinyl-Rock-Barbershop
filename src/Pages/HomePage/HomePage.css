@@ -11,7 +11,7 @@
 }
 .title{
     margin-top:55px;
-    color: brown;
+    color: silver;
     justify-content: center;
     position: absolute;
     display:flex;
@@ -39,7 +39,7 @@ button a {
     user-select: none;
     text-decoration: underline;
     font-size:1.5rem;
-    color:brown;
+    color:silver;
 }
 
 button a:hover{
