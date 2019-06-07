@@ -1,24 +1,23 @@
 .toggle-button {
-    /* display: hidden; */
-    flex-direction: column;
-    justify-content: space-around;
-    height:24px;
-    width: 30px;
-    background:transparent;
-    border:none;
     cursor: pointer;
-    padding:0;
-    box-sizing: border-box;
+    outline: none;
+    position: fixed;
+    top: 15px;
+    right: 12px;
+    transition: opacity 0.2s linear;
 }
 
-.toggle-button:focus{
-    outline: none;
+.toggle-button:hover {
+    opacity: 0.8;
 }
+
 
 .toggle-button-line {
     width: 25px;
-    height: 2px;
+    height: 4px;
     background: white;
+    margin-bottom: 5px;
+    border-radius: 1.5px;
 }
 
 .backdrop {
@@ -27,8 +26,10 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.3);
     z-index: 100;
-
 }
-.Service-container{
- align-content: left;
+
+@media only screen and (min-width: 570px) {
+    .toggle-button {
+        display: none;
+    }
 }

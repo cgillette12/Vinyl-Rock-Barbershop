@@ -45,6 +45,14 @@
     color: rgba(255, 0, 0, 0.502)
 }
 
-.side-button{
-    display: hidden;
+.right-nav {
+    display: none;
 }
+
+
+
+@media only screen and (min-width: 570px) {
+    .right-nav {
+        display: inline;
+    }
+  }

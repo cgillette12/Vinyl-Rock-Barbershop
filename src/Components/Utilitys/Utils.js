@@ -21,10 +21,10 @@ export class ServiceButtons extends Component {
     }
 
     renderServices() {
-        return this.state.barberServices.map((barber ,key)  => {
+        return this.state.barberServices.map(barber => {
             return <button
                 onClick={(e) => this.handleSelectServiceType(e, barber)}
-                id={barber.id} key= {key} >
+                key={barber.id} >
                 <h3>{barber.type}</h3>
                 <p>{barber.price} 45min</p>
             </button>
@@ -88,16 +88,16 @@ export class TimeButtons extends Component {
 export class SideNavToggleButton extends Component {
     render() {
         return (
-            <button className='toggle-button'>
-                <span className='toggle-button-line' />
-                <span className='toggle-button-line' />
-                <span className='toggle-button-line' />
-            </button >
+            <div className='toggle-button'>
+                <div className='toggle-button-line' />
+                <div className='toggle-button-line' />
+                <div className='toggle-button-line' />
+            </div >
         )
     }
 }
 
-export  class SideNavDrawer extends Component {
+export class SideNavDrawer extends Component {
     render() {
         return (
             <nav className='side-drawer'>
@@ -145,7 +145,7 @@ export  class SideNavDrawer extends Component {
 export class backdrop extends Component {
     render() {
         return (
-            <div className='backdrop'/>
+            <div className='backdrop' />
         )
     }
 }
@@ -164,20 +164,20 @@ export class ServiceList extends Component {
             })
     }
     renderServices() {
-        return this.state.barberServices.map((barber, key) => {
-            return <ul className='service-list' key={key}>
-                <li className="service-list-item">
+        return this.state.barberServices.map(barber => {
+            return <ul>
+                <li key={barber.id} >
                     <p>
-                      {barber.type}........{barber.price}
-                   </p>
+                        {barber.type}........{barber.price}
+                    </p>
                 </li>
             </ul>
-        
+
         })
     }
     render() {
         return (
-            <div className='Service-container'>
+            <div>
                 {this.renderServices()}
             </div>
         )
