@@ -17,6 +17,7 @@ footer{
     padding: 0 1rem;
 }
 .footer-container ul {
+    color:white;
     padding: 0;
     justify-content: center;
     list-style: none;
