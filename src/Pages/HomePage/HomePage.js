@@ -13,12 +13,12 @@ export default class Homepage extends Component {
                         Where hair cuting comes easy.<br/>
                         Just log in, Pick your barber , and we'll see you soon!
                     </p>
-                    <button>
+                    <button className='homePage-button'>
                         <Link to="/Login">
                             Login
                         </Link>
                     </button>
-                    <button>
+                    <button className='homePage-button'>
                         <Link to="/Register">
                             Register
                         </Link>

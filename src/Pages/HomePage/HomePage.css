@@ -7,10 +7,10 @@
     background-repeat: no-repeat;
     background-position: bottom;
     justify-content: center;
-    margin-bottom:60px;
+    margin-bottom:100px;
 }
 .title{
-    margin-top:55px;
+    margin-top:0px;
     color: white;
     justify-content: center;
     position: absolute;
@@ -29,7 +29,7 @@ p {
     font-weight: 700;
     font-size: 22px;
 }
-button{
+.homePage-button{
     background:rgba(0, 0, 0, 0.0);
     border:none;
     margin-bottom: 15px;

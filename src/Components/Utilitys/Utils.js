@@ -164,9 +164,9 @@ export class ServiceList extends Component {
             })
     }
     renderServices() {
-        return this.state.barberServices.map(barber => {
-            return <ul>
-                <li key={barber.id} >
+        return this.state.barberServices.map((barber, key) => {
+            return <ul key={key}>
+                <li id={barber.id} >
                     <p>
                         {barber.type}........{barber.price}
                     </p>
