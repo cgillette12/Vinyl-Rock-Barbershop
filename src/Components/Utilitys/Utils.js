@@ -33,7 +33,7 @@ export class ServiceButtons extends Component {
 
     render() {
         return (
-            <div>
+            <div className='service-space'>
                 {this.renderServices()}
             </div>
         )
@@ -76,7 +76,7 @@ export class TimeButtons extends Component {
     }
     render() {
         return (
-            <div>
+            <div className='service-space'>
                 {this.renderTimeButtons()}
             </div>
         )
@@ -189,7 +189,7 @@ export class ServiceList extends Component {
     }
     render() {
         return (
-            <div>
+            <div className='serive-space'>
                 {this.renderServices()}
             </div>
         )

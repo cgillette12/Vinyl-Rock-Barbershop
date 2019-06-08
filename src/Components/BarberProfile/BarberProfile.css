@@ -1,5 +1,5 @@
 .profile-container{
-    display: flex;
+    
     height: 100%;
     width: 100%;
     background-image: url(/static/media/backgroundpicture.959c450b.jpg);
@@ -31,10 +31,14 @@
    padding:35px;
 }
 .profile-section button{
+    display: inline-flex;
     margin:3px;
+    padding:2px;
+    justify-content: center
 }
 .profile-section p {
     font-size: 12px;
+
 }
 .profile-section  h1  {
     color:white;
@@ -42,5 +46,6 @@
 .profile-section  h2  {
     color:white;
 }
+
     
 
