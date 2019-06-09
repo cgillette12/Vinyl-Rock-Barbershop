@@ -7,10 +7,10 @@ export default class Homepage extends Component {
         return (
             <div className='homePage-container'>
                 <section className='title'>
-                    <h1>Vinly Rock <br/> Barbershop</h1>
+                    <h1>Vinyl Rock <br/> Barbershop</h1>
                     <p>
                         Welcome to Vinyl Rock Barbershop.<br/>
-                        Where hair cuting comes easy.<br/>
+                        Where hair cutting comes easy.<br/>
                         Just log in, Pick your barber , and we'll see you soon!
                     </p>
                     <button className='homePage-button'>
