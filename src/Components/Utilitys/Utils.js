@@ -154,7 +154,7 @@ export class SideNavDrawer extends Component {
 
 
 
-export class backdrop extends Component {
+export class Backdrop extends Component {
     render() {
         return (
             <div className='backdrop' />
