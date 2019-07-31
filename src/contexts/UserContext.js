@@ -65,13 +65,8 @@ export class UserProvider extends Component {
     const jwtPayload = TokenService.parseAuthToken()
     this.setUser({
       id: jwtPayload.user_id,
-      first_name:jwtPayload.first_name,
-      last_name:jwtPayload.last_name,
+      name: jwtPayload.name,
       username: jwtPayload.sub,
-      password: jwtPayload.password,
-      email:jwtPayload.email,
-      phone_number:jwtPayload.phone_number,
-      date_created: jwtPayload.date_created
     })
     IdleService.regiserIdleTimerResets()
     TokenService.queueCallbackBeforeExpiry(() => {

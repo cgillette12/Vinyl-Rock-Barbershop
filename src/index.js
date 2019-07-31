@@ -9,8 +9,10 @@ import './index.css';
 
 ReactDOM.render(
     <BrowserRouter>
+        <UserProvider>
             <BarberListProvider>
                 <App />
             </BarberListProvider>
+        </UserProvider>
     </BrowserRouter>
     , document.getElementById('root'));

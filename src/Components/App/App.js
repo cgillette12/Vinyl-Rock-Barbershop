@@ -19,10 +19,10 @@ import './App.css';
 export default class App extends Component {
   state = { hasError: false }
 
-  static getDerivedStateFromError(error) {
-    console.error(error)
-    return { hasError: true }
-  }
+  // static getDerivedStateFromError(error) {
+  //   console.error(error)
+  //   return { hasError: true }
+  // }
   render(){
 
     return (
@@ -32,12 +32,12 @@ export default class App extends Component {
         </header>
         <main role='main' className='vinyl-main'>
           <Switch>
-            <PublicOnlyRoute
+            {/* <PublicOnlyRoute
               exact
               path={'/'}
               component={HomePage}
-              />
-            <PrivateRoute
+              /> */}
+            {/* <PrivateRoute
               exact
               path={'/Barbers'}
               component={BarberPage}
@@ -66,7 +66,7 @@ export default class App extends Component {
               exact
               path={'/Service'}
               component={ServiceMenuPage}
-              />
+              /> */}
             <Route
               component={NotFoundRoute}
               />

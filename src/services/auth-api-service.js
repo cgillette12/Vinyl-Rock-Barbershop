@@ -1,4 +1,5 @@
 import config from '../config';
+import TokenService from '../Services/token-service'
 const AuthApiService = {
     postLogin(credentials) {
         return fetch(`${config.API_ENDPOINT}/auth/login`, {
@@ -26,7 +27,20 @@ const AuthApiService = {
                 (!res.ok)
                     ? res.json().then(e => Promise.reject(e))
                     : res.json())
-    }
+    },
+    refreshToken() {
+        return fetch(`${config.API_ENDPOINT}/auth/token`, {
+            method: 'PUT',
+            headers: {
+                'authorization': `Bearer ${TokenService.getAuthToken()}`,
+            },
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+    },
 
 }
 
