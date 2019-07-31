@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import AuthApiService from '../services/auth-api-service'
-import TokenService from '../services/token-service'
-import IdleService from '../services/idle-service'
+import AuthApiService from '../Services/auth-api-service'
+import TokenService from '../Services/token-service'
+import IdleService from '../Services/Idle-service'
 
 const UserContext = React.createContext({
   user: {},
@@ -65,8 +65,13 @@ export class UserProvider extends Component {
     const jwtPayload = TokenService.parseAuthToken()
     this.setUser({
       id: jwtPayload.user_id,
-      name: jwtPayload.name,
+      first_name:jwtPayload.first_name,
+      last_name:jwtPayload.last_name,
       username: jwtPayload.sub,
+      password: jwtPayload.password,
+      email:jwtPayload.email,
+      phone_number:jwtPayload.phone_number,
+      date_created: jwtPayload.date_created
     })
     IdleService.regiserIdleTimerResets()
     TokenService.queueCallbackBeforeExpiry(() => {

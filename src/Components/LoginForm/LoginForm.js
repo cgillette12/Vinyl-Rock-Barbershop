@@ -1,43 +1,39 @@
-import React, { Component } from 'react'
+import React, { useState , useContext } from 'react'
 import { Link } from 'react-router-dom'
 
-import TokenService from '../../Services/token-service'
+import UserContext from '../../Contexts/UserContext'
 import AuthApiService from '../../Services/auth-api-service'
 
 
-export default class LoginForm extends Component {
-    static defaultProps = {
-        onLoginSuccess: () => { }
-    }
+export default function LoginForm(props) {
+    const [user_name, setUser_name] = useState('');
+    const [password, setPassword] = useState('')
+    const [error, setError] = useState(null);
+    const { onLoginSuccess = () => { } } = props;
+    const context = useContext(UserContext);
 
-    state = { error: null }
-
-    handleSubmitJwtAuth = e => {
+    const handleSubmitJwtAuth = e => {
         e.preventDefault()
-        this.setState({ error: null })
-        const { user_name, password } = e.target
 
         AuthApiService.postLogin({
-            user_name: user_name.value,
-            password: password.value,
+            user_name: user_name,
+            password: password,
         })
             .then(res => {
-                user_name.value = ''
-                password.value = ''
-                TokenService.saveAuthToken(res.authToken)
-                this.props.onLoginSuccess()
+                setUser_name('')
+                setPassword('')
+                context.processLogin(res.authToken)
+                onLoginSuccess()
             })
             .catch(res => {
-                this.setState({ error: res.error })
+               setError(res.error) 
             })
-    }
-    render() {
-        const { error } = this.state
+        }
         return (
             <div>
                 <form
                     className='LoginForm'
-                    onSubmit={this.handleSubmitJwtAuth}
+                    onSubmit={handleSubmitJwtAuth}
                 >
                     <div role='alert'>
                         {error && <p className='red'>{error}</p>}
@@ -49,6 +45,7 @@ export default class LoginForm extends Component {
                         type='text'
                         placeholder='Cody_Gill...'
                         name='user_name'
+                        onChange={e => setUser_name(e.target.value)}
                         required
                     />
                     <label className='Password'>
@@ -57,6 +54,7 @@ export default class LoginForm extends Component {
                     <input
                         type='password'
                         name='password'
+                        onChange={e => setPassword(e.target.value)}
                         required
                     />
                     <div className='submit-login-section'>
@@ -70,5 +68,4 @@ export default class LoginForm extends Component {
                 </form>
             </div>
         )
-    }
 }
