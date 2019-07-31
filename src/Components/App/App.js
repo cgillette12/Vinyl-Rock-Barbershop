@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {Component} from 'react'
 import { Route, Switch } from 'react-router-dom'
 
 import BarberPage from '../../Pages/BarberPage/BarberPage'
@@ -16,7 +16,14 @@ import PrivateRoute from '../../Components/PrivateRoute/PrivateRoute'
 import PublicOnlyRoute from '../PublicOnlyRoute/PublicOnlyRoute'
 import './App.css';
 
-export default function App(){
+export default class App extends Component {
+  state = { hasError: false }
+
+  static getDerivedStateFromError(error) {
+    console.error(error)
+    return { hasError: true }
+  }
+  render(){
 
     return (
       <div className='main-container'>
@@ -29,40 +36,40 @@ export default function App(){
               exact
               path={'/'}
               component={HomePage}
-            />
+              />
             <PrivateRoute
               exact
               path={'/Barbers'}
               component={BarberPage}
-            />
+              />
             <PrivateRoute 
               exact 
               path='/BarberProfile/:barberid'
               component={BarberProfile}
-            />
+              />
             <PublicOnlyRoute
               exact
               path={'/Login'}
               component={LoginPage}
-            />
+              />
             <PrivateRoute 
               exact 
               path={'/Profile'}
               component={ProfilePage}
-            />
+              />
             <PublicOnlyRoute 
               exact         
               path={'/Register'}
               component={RegisterPage}
-            />
+              />
             <PublicOnlyRoute
               exact
               path={'/Service'}
               component={ServiceMenuPage}
-            />
+              />
             <Route
               component={NotFoundRoute}
-            />
+              />
           </Switch>
         </main>
           <footer >
@@ -70,7 +77,8 @@ export default function App(){
           </footer>
       </div>
     )
+  }
 }
-
-
+  
+  
 
