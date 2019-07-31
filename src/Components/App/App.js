@@ -32,41 +32,41 @@ export default class App extends Component {
         </header>
         <main role='main' className='vinyl-main'>
           <Switch>
-            {/* <PublicOnlyRoute
+            <Route
               exact
               path={'/'}
               component={HomePage}
-              /> */}
-            {/* <PrivateRoute
+              />
+            <Route
               exact
               path={'/Barbers'}
               component={BarberPage}
               />
-            <PrivateRoute 
+            <Route 
               exact 
               path='/BarberProfile/:barberid'
               component={BarberProfile}
               />
-            <PublicOnlyRoute
+            <Route
               exact
               path={'/Login'}
               component={LoginPage}
               />
-            <PrivateRoute 
+            <Route 
               exact 
               path={'/Profile'}
               component={ProfilePage}
               />
-            <PublicOnlyRoute 
+            <Route 
               exact         
               path={'/Register'}
               component={RegisterPage}
               />
-            <PublicOnlyRoute
+            <Route
               exact
               path={'/Service'}
               component={ServiceMenuPage}
-              /> */}
+              />
             <Route
               component={NotFoundRoute}
               />

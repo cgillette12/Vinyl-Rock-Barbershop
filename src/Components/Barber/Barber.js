@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Barber(){
+export default function Barber(props){
 
     
-        const { barber } = this.props
+        const { barber } = props
         return (
             <div className='Barber-wrapper'>
                 <li>
