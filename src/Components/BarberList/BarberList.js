@@ -1,40 +1,37 @@
-import React ,{useState, useEffect, useContext} from 'react'
+import React, { Component } from 'react'
 
 import BarberListContext from '../../Contexts/BarberListContext'
 import Barber from '../Barber/Barber'
 import BarberApiService from '../../Services/barber-api-service'
 
-export default function BarberList() {
-    const [error, setError] = useState(null);
-    const context = useContext(BarberListContext)
+export default class BarberList extends Component {
+    static contextType = BarberListContext
 
-   useEffect(() => {
+    componentDidMount() {
         BarberApiService.getAllBarbers()
-            .then(res => {
-                return context.setBarberList(res)
-            })
-            .catch(error => {
-                setError(error)
-            })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
+            .then(this.context.setBarberList)
+            .catch(this.context.setError)
+    }
 
-    const renderBarbers = () =>  {
-       
-        return context.barberList.map(barber =>
+    renderBarbers() {
+        const { barberList = [] } = this.context
+        return barberList.map(barber =>
             <Barber
                 key={barber.id}
                 barber={barber}
             />
-            )
+        )
     }
+    render() {
+        const { error } = this.context
         return (
             <div>
                 <ul className='BarberList'>
-                    {error ? 
-                    <p >There was and error,try again later</p>
-                    :renderBarbers()}
+                    {error ?
+                        <p >There was and error,try again later</p>
+                        : this.renderBarbers()}
                 </ul>
             </div>
         )
+    }
 }

@@ -7,16 +7,26 @@ const AppointmentContext = React.createContext({
   error: null,
   setError: () => { },
   clearError: () => { },
-  setBarberList: () => { }
+  setBarberInfo: () => { },
+  setSelectTime: () => { },
+  setServiceType: () => { }
 })
 export default AppointmentContext
 export  class AppointmentProvider extends Component {
   state = {
     barberInfo: [],
+    serviceSelected: '',
+    timeSelected: '',
     error: null,
   }
   setBarberInfo = barberInfo => {
     this.setState({ barberInfo })
+  }
+  setServiceType = serviceSelected => {
+    return this.setState({ serviceSelected})
+  }
+  setSelectTime = timeSelected => {
+    return this.setState({ timeSelected})
   }
   setError = error => {
     console.error(error)
@@ -28,14 +38,20 @@ export  class AppointmentProvider extends Component {
   }
 
   render() {
-    const { BarberInfo,
+    const { barberInfo,
+      serviceSelected,
+      timeSelected,
       error,
     } = this.state
 
     const value = {
-      BarberInfo,
+      barberInfo,
+      serviceSelected,
+      timeSelected,
       error,
       setBarberInfo: this.setBarberInfo,
+      setServiceType: this.setServiceType,
+      setTimeSelected : this.setTimeSelected,
       setError: this.setError,
       clearError: this.clearError
     }

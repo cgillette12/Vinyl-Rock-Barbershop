@@ -37,6 +37,7 @@ export default class App extends Component {
               component={BarberPage}
               />
             <Route 
+              exact
               path='/BarberProfile/:barberid'
               component={BarberProfile}
               />

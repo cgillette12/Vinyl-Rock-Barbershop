@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Barber(props){
+export default class Barber extends Component {
 
-    
-        const { barber } = props
+    render() {
+        const { barber } = this.props
         return (
             <div className='Barber-wrapper'>
                 <li>
@@ -13,8 +13,8 @@ export default function Barber(props){
                     </Link>
                     <h4>Avalable Tomorrow</h4>
                     <p>Tomorrow @ 7 a.m</p>
-                </li>   
+                </li>
             </div>
         )
-
+    }
 }
