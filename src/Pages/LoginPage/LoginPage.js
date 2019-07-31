@@ -1,29 +1,26 @@
-import React, { Component } from 'react'
+import React from 'react'
 import LoginForm from '../../Components/LoginForm/LoginForm'
+import { Redirect } from 'react-router-dom'
+import TokenService from '../../services/token-service'
 import './LoginPage.css'
 
-export default class LoginPage extends Component {
-    static defaultProps = {
-        location: {},
-        history: {
-            push: () => { },
-        },
-    }
+export default function LoginPage(props) {
+    
 
-    handleLoginSuccess = () => {
-        const { location, history } = this.props
+    const handleLoginSuccess = () => {
+        const { location = {}, history = { push: () => { } } } = props;
         const destination = (location.state || {}).from || '/'
         history.push(destination)
     }
-    render() {
+  
         return (
             <div className='loginPage'>
+            {TokenService.hasAuthToken() ? <Redirect to="/" /> : <></> }
                 <section className='login-section'>
                 <h2>Login</h2>
-                <LoginForm onLoginSuccess = {this.handleLoginSuccess}/>
+                <LoginForm onLoginSuccess = {handleLoginSuccess}/>
                 </section>
             
             </div>
         )
-    }
-}
+    };
