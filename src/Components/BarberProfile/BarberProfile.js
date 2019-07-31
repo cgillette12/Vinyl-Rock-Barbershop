@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 
+import AppointmentContext from '../../Contexts/AppointmentContext'
 import AppointmentApiService from '../../Services/appointment-api-service'
 import BarberApiService from '../../Services/barber-api-service'
 
@@ -7,68 +8,70 @@ import BarberApiService from '../../Services/barber-api-service'
 import { TimeButtons, ServiceButtons } from '../Utilitys/Utils'
 import './BarberProfile.css'
 
-export default class BarberProfile extends Component {
-    state = {
-        barberInfo: [],
-        serviceSelected: '',
-        timeSelected: '',
-        hasError: false
-    }
-    static defaultProps = {
-        match: { params: {} }
-    }
-    componentDidMount() {
-        const { barberid } = this.props.match.params
-        BarberApiService.getBarber(barberid)
-            .then(data => {
-                return this.setState({ barberInfo: data })
-            })
-    }
+export default function BarberProfile(props) {
 
-    handleServiceType = ev => {
-        return this.setState({ serviceSelected: ev })
+    const [barberInfo, setBarberInfo] = useState([]);
+    const [serviceSelected, setServiceSelected] = useState('');
+    const [timeSelected, setTimeSelected] = useState('');
+    const [error, setError] = useState(null);
+    const context = useContext(AppointmentContext);
+
+   
+useEffect(()=>  {
+    const { barberid } = props.match.params
+    BarberApiService.getBarber(barberid)
+        .then(data => {
+            console.log(data)
+             setBarberInfo(data) 
+             context.setBarberInfo(data)
+        })
+        .catch(error => {
+            setError(error)
+        })
+},[])
+
+const handleServiceType = ev => {
+    return setServiceSelected(ev)
+}
+const handleSelectTime = ev => {
+    return setTimeSelected(ev)
+}
+
+ const handleSelectedServices = ev => {
+    ev.preventDefault();
+
+    
+    const { id } = barberInfo.id
+
+    const newAppointment = {
+        time: timeSelected,
+        services_id: serviceSelected,
+        barber_id: id
     }
-    handleSelectTime = ev => {
-        return this.setState({ timeSelected: ev })
-    }
+    AppointmentApiService.postAppointment(newAppointment)
 
-    handleSelectedServices = ev => {
-        ev.preventDefault();
 
-        const { timeSelected, serviceSelected } = this.state
-        const { id } = this.state.barberInfo
-        
-        const newAppointment = {
-            time: timeSelected,
-            services_id: serviceSelected,
-            barber_id: id
-        }
-        AppointmentApiService.postAppointment(newAppointment)
-        
-            
-        }
-        
+}
 
-    render() {
-        const { first_name } = this.state.barberInfo
-        return (
-            <div className='profile-container'>
+    const { first_name } = barberInfo
+    return (
+        <div className='profile-container'>
             <section className='profile-section'>
                 <h1>{first_name}</h1>
                 <form className='service-time-list'
-                    onSubmit={this.handleSelectedServices}
+                    onSubmit={ev => handleSelectedServices(ev)}
                 ><div className='service-list'>
                         <h2>Choose your Service</h2>
-                        <ServiceButtons name='services' serviceId={this.handleServiceType} />
+                        <ServiceButtons name='services' serviceId={ev => handleServiceType(ev)} />
                     </div>
                     <div className='time-list'>
                         <h2>Pick Time</h2>
-                        <TimeButtons name='time' timeId={this.handleSelectTime} />
+                        <TimeButtons name='time' timeId={ev => handleSelectTime(ev)} />
                     </div>
-                    <button  className='submit-haircut' type='submit'>Review/Book</button>
+                    <button className='submit-haircut' type='submit'>Review/Book</button>
                 </form>
-                </section>
-            </div>
-        )
-    }
+            </section>
+        </div>
+    )
 }
+

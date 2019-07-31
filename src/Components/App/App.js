@@ -36,8 +36,7 @@ export default class App extends Component {
               path={'/Barbers'}
               component={BarberPage}
               />
-            <PrivateRoute 
-              exact 
+            <Route 
               path='/BarberProfile/:barberid'
               component={BarberProfile}
               />
