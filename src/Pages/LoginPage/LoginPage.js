@@ -1,7 +1,7 @@
 import React from 'react'
 import LoginForm from '../../Components/LoginForm/LoginForm'
 import { Redirect } from 'react-router-dom'
-import TokenService from '../../services/token-service'
+import TokenService from '../../Services/token-service'
 import './LoginPage.css'
 
 export default function LoginPage(props) {

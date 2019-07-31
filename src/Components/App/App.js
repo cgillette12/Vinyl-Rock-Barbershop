@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
 import BarberPage from '../../Pages/BarberPage/BarberPage'
@@ -16,22 +16,14 @@ import PrivateRoute from '../../Components/PrivateRoute/PrivateRoute'
 import PublicOnlyRoute from '../PublicOnlyRoute/PublicOnlyRoute'
 import './App.css';
 
-export default class App extends Component {
-  state = { hasError: false }
+export default function App(){
 
-  static getDerivedStateFromError(error) {
-    console.error(error)
-    return { hasError: true }
-  }
-
-  render() {
     return (
       <div className='main-container'>
         <header className='Nav-header'>
           <NavBar />
         </header>
         <main role='main' className='vinyl-main'>
-          {this.state.hasError && <p className='red'>There was an error!</p>}
           <Switch>
             <PublicOnlyRoute
               exact
@@ -78,7 +70,6 @@ export default class App extends Component {
           </footer>
       </div>
     )
-  }
 }
 
 
