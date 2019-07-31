@@ -13,16 +13,10 @@ import ServiceMenuPage from '../../Pages/ServiceMenuPage/ServiceMenuPage'
 
 import NotFoundRoute from '../../Components/NotFoundRoute/NotFoundRoute'
 import PrivateRoute from '../../Components/PrivateRoute/PrivateRoute'
-import PublicOnlyRoute from '../PublicOnlyRoute/PublicOnlyRoute'
 import './App.css';
 
 export default class App extends Component {
   state = { hasError: false }
-
-  // static getDerivedStateFromError(error) {
-  //   console.error(error)
-  //   return { hasError: true }
-  // }
   render(){
 
     return (
@@ -37,12 +31,12 @@ export default class App extends Component {
               path={'/'}
               component={HomePage}
               />
-            <Route
+            <PrivateRoute
               exact
               path={'/Barbers'}
               component={BarberPage}
               />
-            <Route 
+            <PrivateRoute 
               exact 
               path='/BarberProfile/:barberid'
               component={BarberProfile}
@@ -52,7 +46,7 @@ export default class App extends Component {
               path={'/Login'}
               component={LoginPage}
               />
-            <Route 
+            <PrivateRoute 
               exact 
               path={'/Profile'}
               component={ProfilePage}

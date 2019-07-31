@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import AuthApiService from '../Services/auth-api-service'
 import TokenService from '../Services/token-service'
-import IdleService from '../Services/Idle-service'
 
 const UserContext = React.createContext({
   user: {},
@@ -9,8 +7,9 @@ const UserContext = React.createContext({
   setError: () => { },
   clearError: () => { },
   setUser: () => { },
+  clearUser: () => { },
   processLogin: () => { },
-  processLogout: () => { },
+  processLogout: () => { }
 })
 
 export default UserContext
@@ -25,27 +24,14 @@ export class UserProvider extends Component {
     if (jwtPayload)
       state.user = {
         id: jwtPayload.user_id,
-        name: jwtPayload.name,
-        username: jwtPayload.sub,
+        user_name: jwtPayload.sub,
+        first_name: jwtPayload.first_name,
+        last_name: jwtPayload.last_name
       }
 
     this.state = state;
-    IdleService.setIdleCallback(this.logoutBecauseIdle)
   }
 
-  componentDidMount() {
-    if (TokenService.hasAuthToken()) {
-      IdleService.regiserIdleTimerResets()
-      TokenService.queueCallbackBeforeExpiry(() => {
-        this.fetchRefreshToken()
-      })
-    }
-  }
-
-  componentWillUnmount() {
-    IdleService.unRegisterIdleResets()
-    TokenService.clearCallbackBeforeExpiry()
-  }
 
   setError = error => {
     console.error(error)
@@ -60,46 +46,35 @@ export class UserProvider extends Component {
     this.setState({ user })
   }
 
+  clearUser = () => {
+    this.setState({ user: {} })
+  }
+
+
   processLogin = authToken => {
     TokenService.saveAuthToken(authToken)
     const jwtPayload = TokenService.parseAuthToken()
     this.setUser({
       id: jwtPayload.user_id,
-      name: jwtPayload.name,
-      username: jwtPayload.sub,
-    })
-    IdleService.regiserIdleTimerResets()
-    TokenService.queueCallbackBeforeExpiry(() => {
-      this.fetchRefreshToken()
+      user_name: jwtPayload.sub,
+      first_name: jwtPayload.first_name,
+      last_name: jwtPayload.last_name
     })
   }
 
   processLogout = () => {
     TokenService.clearAuthToken()
     TokenService.clearCallbackBeforeExpiry()
-    IdleService.unRegisterIdleResets()
     this.setUser({})
   }
 
   logoutBecauseIdle = () => {
     TokenService.clearAuthToken()
     TokenService.clearCallbackBeforeExpiry()
-    IdleService.unRegisterIdleResets()
     this.setUser({ idle: true })
   }
 
-  fetchRefreshToken = () => {
-    AuthApiService.refreshToken()
-      .then(res => {
-        TokenService.saveAuthToken(res.authToken)
-        TokenService.queueCallbackBeforeExpiry(() => {
-          this.fetchRefreshToken()
-        })
-      })
-      .catch(err => {
-        this.setError(err)
-      })
-  }
+  
 
   render() {
     const value = {
@@ -108,8 +83,9 @@ export class UserProvider extends Component {
       setError: this.setError,
       clearError: this.clearError,
       setUser: this.setUser,
+      clearUser: this.clearUser,
       processLogin: this.processLogin,
-      processLogout: this.processLogout,
+      processLogout: this.processLogout
     }
     return (
       <UserContext.Provider value={value}>

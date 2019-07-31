@@ -16,6 +16,7 @@ export default function BarberList() {
             .catch(error => {
                 setError(error)
             })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     const renderBarbers = () =>  {
