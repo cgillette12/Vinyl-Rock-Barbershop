@@ -4,7 +4,7 @@
     top:0;
     left: 0;
     width:100%;
-    background:rgba(170, 167, 167, 0.5);
+    background:var(--darkblack);
     height: 56px;
 }
 .NavBar {
@@ -17,7 +17,7 @@
     margin-left: 1 rem;
 }
 .logo a {
-    color: white;
+    color:var(--white);
     text-decoration: none;
     font-size:1.5rem;
 
@@ -36,7 +36,7 @@
     padding:0 0.5rem;
 }
 .right-nav a {
-    color: white;
+    color:var(--white);
     text-decoration: none;
 }
 

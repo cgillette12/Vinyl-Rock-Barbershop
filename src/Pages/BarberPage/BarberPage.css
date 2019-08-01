@@ -1,4 +1,4 @@
-.Barber-container{
+/* .Barber-container{
     display: flex;
     height: 100%;
     width: 100%;
@@ -9,20 +9,15 @@
     justify-content: center;
     margin-bottom: 60px;
 
-}
+} */
 .Barber-section{
-     color: silver;
-    margin-top:55px;
+    color: var(--white);
     display:flex;
-    height: 100%;
-    width: 100%;
-    line-height: 1.4;
+    padding-top:70px;
     flex-direction: column;
-    align-content:center;
-    text-align: left;
 }
 .Barber-section h1{
-    color:white;
+    color:var(--white);
 }
 
 .Barber-section ul{

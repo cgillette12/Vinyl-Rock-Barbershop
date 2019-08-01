@@ -19,12 +19,8 @@
     align-content:center;
     text-align: left;
 }
-form{
-     height: 100%;
-    width: 340px;
-    border-radius: 5px;
-}
-input{
+
+/* input{
     width: 90%;
     padding: 10px 11px;
     margin: 15px;
@@ -35,7 +31,7 @@ input{
 }
 button:hover {
   opacity: 0.8;
-}
+} */
 .submit-login-section{
     display: flex;
      justify-content: space-evenly;

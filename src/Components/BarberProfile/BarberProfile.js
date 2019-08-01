@@ -65,8 +65,8 @@ export default class BarberProfile extends Component {
                         <h2>Pick Time</h2>
                         <TimeButtons name='time' timeId={this.handleSelectTime} />
                     </div>
-                    <button  className='submit-haircut' type='submit'>Review/Book</button>
                 </form>
+                <button  className='submit-haircut' type='submit'>Review/Book</button>
                 </section>
             </div>
         )

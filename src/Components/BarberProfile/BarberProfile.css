@@ -1,50 +1,65 @@
 .profile-container{
-    
-    height: 100%;
-    width: 100%;
+    flex:1;
     background-image: url(/static/media/backgroundpicture.959c450b.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
+    overflow: scroll;
     justify-content: center;
-
 }
 .profile-section{
-    /* color: silver; */
-    margin-top:55px;
-    display:flex;
-    height: 100%;
-    width: 100%;
-    line-height: 1.5;
-    flex-direction: column;
-    align-content:center;
-    text-align: left;
+    padding-top:70px;
+    background: var(--blackish);
 }
 .profile-section form{
     display: flex;
+}
+.service-list{
+    padding: 0 10px;
+    flex:1;
+
+}
+.service-space{
+    display: flex;
     flex-direction: column;
-    flex: 1;
-    width: 100%;
+}
+.time-list{
+    padding: 0 10px;
+    flex:1
 }
 .profile-section .submit-haircut{
-   margin-top:50px;
-   padding:35px;
+    padding: 35px;
+    width: 100%;
+    font-size: 30px;
+    margin:auto;
 }
 .profile-section button{
-    display: inline-flex;
     margin:3px;
     padding:2px;
-    justify-content: center
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    color: var(--white);
 }
 .profile-section p {
-    font-size: 12px;
+    color:var(white);
+    font-size: 22px;
+
+}
+.profile-section h3{
+    margin:0;
+    padding:13px 0;
+    font-size:25px;
 
 }
 .profile-section  h1  {
-    color:white;
+    color:var(--white);
+    font-size: 36px;
+    margin:0;
+    padding: 25px 10px;
 }
 .profile-section  h2  {
-    color:white;
+    color:var(--white);
+    font-size:32px;
 }
 
     

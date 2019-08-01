@@ -1,6 +1,5 @@
 .homePage-container{
     display: flex;
-    height:100%;
     width: 100%;
     background-image: url('backgroundpicture.jpg');
     background-size: cover;
@@ -9,36 +8,38 @@
     justify-content: center;
 }
 .title{
-    color: silver;
-    justify-content: center;
+    color: white;
+    background-color:var(--blackish);
     display:flex;
-    height: 100%;
-    line-height: 1.5;
+    margin:auto;
     flex-direction: column;
     align-content:center;
-    text-align: left;
+    padding: 25px 50px;
+    
 }
-h1{
+.title h1{
     font-size:32px;
+    margin:0;
 }
 
-p {
-    font-weight: 700;
+.title p {
+    margin:0;
     font-size: 22px;
 }
 .homePage-button{
     background:rgba(0, 0, 0, 0.0);
     border:none;
-    margin-bottom: 15px;
+    margin:0;
+    font-size:26px;
+    padding:7px 0;
    
 }
 .homePage-button a {
-    user-select: none;
-    text-decoration: underline;
-    font-size:1.5rem;
-    color:silver;
+    text-decoration: none;
+    color:var(--white);
 }
 
 .homePage-button a:hover{
+      text-decoration: underline;
       color: rgba(255, 0, 0, 0.502);
 }

@@ -16,3 +16,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+:root{
+  --darkblack:rgba(0,0,0,0.8);
+  --blackish:rgba(0,0,0,0.6);
+  --white:white; 
+}
