@@ -10,6 +10,8 @@ import NavBar from '../NavBar/NavBar'
 import ProfilePage from '../../Pages/ProfilePage/ProfilePage';
 import RegisterPage from '../../Pages/RegisterPage/RegisterPage'
 import ServiceMenuPage from '../../Pages/ServiceMenuPage/ServiceMenuPage'
+
+import PrivateRoute from '../PrivateRoute/PrivateRoute'
 import './App.css';
 
 export default class App extends Component {
@@ -30,17 +32,17 @@ export default class App extends Component {
           {this.state.hasError && <p className='red'>There was an error!</p>}
           <Switch>
             <Route exact path='/' component={HomePage} />
-            <Route exact path='/Barbers' component={BarberPage} />
+            < PrivateRoute exact path='/Barbers' component={BarberPage} />
             <Route exact path='/BarbersProfile/:barberid' component={BarberProfile} />
             <Route exact path='/Login' component={LoginPage} />
-            <Route exact path='/Profile' component={ProfilePage} />
+            <PrivateRoute exact path='/Profile' component={ProfilePage} />
             <Route exact path='/Register' component={RegisterPage} />
             <Route exact path='/Service' component={ServiceMenuPage} />
           </Switch>
         </main>
-          <footer >
-            <Footer />
-          </footer>
+        <footer >
+          <Footer />
+        </footer>
       </div>
     )
   }
