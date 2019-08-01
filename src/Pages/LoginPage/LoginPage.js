@@ -19,10 +19,10 @@ export default class LoginPage extends Component {
         return (
             <div className='loginPage'>
                 <section className='login-section'>
-                <h2>Login</h2>
-                <LoginForm onLoginSuccess = {this.handleLoginSuccess}/>
+                    <h2>Login</h2>
+                    <LoginForm onLoginSuccess={this.handleLoginSuccess} />
                 </section>
-            
+
             </div>
         )
     }

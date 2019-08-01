@@ -13,7 +13,7 @@ export default class Barber extends Component {
                     </Link>
                     <h4>Avalable Tomorrow</h4>
                     <p>Tomorrow @ 7 a.m</p>
-                </li>   
+                </li>
             </div>
         )
     }

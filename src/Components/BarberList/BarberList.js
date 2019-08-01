@@ -20,16 +20,16 @@ export default class BarberList extends Component {
                 key={barber.id}
                 barber={barber}
             />
-            )
+        )
     }
     render() {
-        const { error } =this.context
+        const { error } = this.context
         return (
             <div>
                 <ul className='BarberList'>
-                    {error ? 
-                    <p >There was and error,try again later</p>
-                    :this.renderBarbers()}
+                    {error ?
+                        <p >There was and error,try again later</p>
+                        : this.renderBarbers()}
                 </ul>
             </div>
         )
