@@ -1,6 +1,6 @@
 .registerPage{
     display: flex;
-    /* height: 100%; */
+   
     width: 100%;
     background-image: url(/static/media/backgroundpicture.959c450b.jpg);
     background-size: cover;
@@ -11,11 +11,56 @@
 }
 .registation-section {
     color: white;
-    justify-content: center;
-    display:flex;
-    height: 100%;
-    line-height: 1.5;
+    background-color: var(--blackish);
+    width: 100%;
+    display: flex;
+    margin: auto;
     flex-direction: column;
-    align-content:center;
-    text-align: left;
+    align-content: center;
+    padding: 50px 80px;
+    max-width: 500px;
 }
+.registation-section h3{
+    font-size: 36px;
+    margin: 0;
+    padding:10px 0;
+}
+.RegisterForm{
+    display: flex;
+    flex-direction: column;
+}
+.RegisterForm label{
+    font-size: 22px;
+    padding:22px 0
+}
+.RegisterForm input{
+    font-size: 22px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.registation-section button {
+    padding-top: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    text-decoration: underline;
+    background-color:rgba(0,0,0,0);
+    border: none;
+    color:var(--white);
+}
+
+
+.registation-section button:hover {
+    cursor: pointer;
+    color: rgba(255, 0, 0, 0.502)
+}
+
+@media only screen and (max-width: 380px) {
+   .registation-section{
+       padding:50px 20px;
+   }
+  }
+@media only screen and (max-width: 500px) {
+    .registation-section{
+       padding:50px 30px;
+   }
+  }

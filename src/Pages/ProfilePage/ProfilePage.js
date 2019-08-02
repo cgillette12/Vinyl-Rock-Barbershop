@@ -28,7 +28,8 @@ export default class ProfilePage extends Component {
                     <td>{time}</td>
                     <td>{first_name}</td>
                     <td>{type}</td>
-                    <td><button>Cancel</button></td>
+                    {/* Cancel button is for extended feature list */}
+                    <td><button className='cancel-button'>Cancel</button></td>
                 </tr>
         })
 
@@ -37,10 +38,10 @@ export default class ProfilePage extends Component {
     render() {
         return (
             <div className='profile-container'>
-                <section className='profile-section'>
+                <section className='user-profile-section'>
                 <h1>My Profile</h1>
                 <h2>Appointments</h2>
-                <table>
+                <table className='user-Table'>
                     <tbody>
                     <tr>
                         <th>Time</th>

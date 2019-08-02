@@ -1,17 +1,7 @@
-/* .Barber-container{
-    display: flex;
-    height: 100%;
-    width: 100%;
-    background-image: url(/static/media/backgroundpicture.959c450b.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    justify-content: center;
-    margin-bottom: 60px;
 
-} */
 .Barber-section{
     color: var(--white);
+    background-color:var(--blackish);
     display:flex;
     padding-top:70px;
     flex-direction: column;
@@ -22,6 +12,7 @@
 
 .Barber-section ul{
     padding-left:10px;
+    overflow:scroll;
 }
 
 .Barber-section p {
@@ -30,8 +21,13 @@
 }
 .Barber-section ul li{
     list-style: none;
+    max-width: 300px;
     text-align: left;
-    padding:0
+    padding: 0px 0px 10px 10px;
+    font-size: 22px;
+    border: 1px solid var(--white);
+    display: flex;
+    flex-direction: column;
 }
 .Barber-section a {
     margin-top:8px;
@@ -44,5 +40,5 @@
     color: rgba(255, 0, 0, 0.502)
 }
 .Barber-wrapper{
-    margin-top:5px;
+    margin-top:15px;
 }

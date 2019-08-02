@@ -36,6 +36,7 @@ export default class BarberProfile extends Component {
         ev.preventDefault();
 
         const { timeSelected, serviceSelected } = this.state
+
         const { id } = this.state.barberInfo
         
         const newAppointment = {

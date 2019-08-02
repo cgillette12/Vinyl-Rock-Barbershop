@@ -15,7 +15,7 @@
     display: flex;
 }
 .service-list{
-    padding: 0 10px;
+    padding: 0 10px 10px;
     flex:1;
 
 }
@@ -23,23 +23,44 @@
     display: flex;
     flex-direction: column;
 }
+.time-service-space{
+    display: flex;
+    flex-direction: column;
+}
 .time-list{
-    padding: 0 10px;
+    padding: 0 10px 10px;
     flex:1
 }
 .profile-section .submit-haircut{
     padding: 35px;
     width: 100%;
     font-size: 30px;
-    margin:auto;
+    margin:0;
 }
-.profile-section button{
+.service-list button{
     margin:3px;
     padding:2px;
     background-color: rgba(0,0,0,0.8);
     justify-content: center;
     color: var(--white);
 }
+.time-service-space button{
+    margin:3px;
+    padding:2px;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    color: var(--white);
+}
+.time-service-space button:focus{
+    outline: none;
+    background:rgba(255,255,255,0.1);
+    
+}
+.service-list button:focus{
+    outline: none;
+    background:rgba(255,255,255,0.1);
+}
+
 .profile-section p {
     color:var(white);
     font-size: 22px;

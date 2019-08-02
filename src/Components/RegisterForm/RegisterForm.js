@@ -53,7 +53,7 @@ export default class RegisterForm extends Component {
                             {error && <p className='red'>{error}</p>}
                         </div>
                         <label className='First-Name-form'>
-                            First Name
+                            First Name*
                         </label>
                         <input
                             type='text'
@@ -63,7 +63,7 @@ export default class RegisterForm extends Component {
 
                         />
                         <label className='Last-Name-form'>
-                            Last Name
+                            Last Name*
                         </label>
                         <input
                             type='text'
@@ -73,7 +73,7 @@ export default class RegisterForm extends Component {
 
                         />
                         <label className='userName-form'>
-                            User Name
+                            User Name*
                         </label>
                         <input
                             type='text'
@@ -82,7 +82,7 @@ export default class RegisterForm extends Component {
                             required
                         />
                         <label className='Password-form'>
-                            Password
+                            Password* Uppercase # and one Special !#$%*
                         </label>
                         <input
                             type='password'
@@ -90,7 +90,7 @@ export default class RegisterForm extends Component {
                             required
                         />
                         <label className='phone_number-form'>
-                            Phone Number
+                            Phone Number* 123-123-1234
                         </label>
                         <input
                             type='tel'
@@ -100,7 +100,7 @@ export default class RegisterForm extends Component {
                             required
                         />
                         <label className='email-form'>
-                            Email
+                            Email*
                         </label>
                         <input
                             type='email'
