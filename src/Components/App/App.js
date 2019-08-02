@@ -6,6 +6,7 @@ import BarberProfile from '../BarberProfile/BarberProfile'
 import Footer from '../../Components/Footer/Footer'
 import HomePage from '../../Pages/HomePage/HomePage'
 import LoginPage from '../../Pages/LoginPage/LoginPage'
+import LandingPage from '../../Pages/LandingPage/LandingPage'
 import NavBar from '../NavBar/NavBar'
 import ProfilePage from '../../Pages/ProfilePage/ProfilePage';
 import RegisterPage from '../../Pages/RegisterPage/RegisterPage'
@@ -31,7 +32,8 @@ export default class App extends Component {
         <main role='main' className='vinyl-main'>
           {this.state.hasError && <p className='red'>There was an error!</p>}
           <Switch>
-            <Route exact path='/' component={HomePage} />
+            <Route exact path='/' component={LandingPage} />
+            <PrivateRoute exact path='HomePage' component={HomePage}/>
             < PrivateRoute exact path='/Barbers' component={BarberPage} />
             <Route exact path='/BarbersProfile/:barberid' component={BarberProfile} />
             <Route exact path='/Login' component={LoginPage} />

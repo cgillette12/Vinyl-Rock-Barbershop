@@ -7,7 +7,7 @@ export default function DemoCreds(props) {
 
   const handleDemoLoginSuccess = () => {
     const { location = {}, history = { push: () => { } } } = props
-    const destination = (location.state || {}).from || '/dashboard'
+    const destination = (location.state || {}).from || '/Service'
     history.push(destination)
   }
 

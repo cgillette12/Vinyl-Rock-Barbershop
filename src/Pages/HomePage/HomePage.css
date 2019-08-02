@@ -28,6 +28,10 @@
     font-size: 22px;
     line-height: 1.4;
 }
+.homePagebutton-container{
+    display: flex;
+    justify-content: space-between
+}
 .homePage-button{
     background:rgba(0, 0, 0, 0.0);
     border:none;
@@ -37,11 +41,21 @@
    
 }
 .homePage-button a {
-    text-decoration: none;
+    text-decoration: underline;
     color:var(--white);
 }
+.link-button{
+    background: rgba(0, 0, 0, 0.0);
+    border: none;
+    margin: 0;
+    font-size: 26px;
+    padding: 7px 0;
+    color: var(--white);
+    text-decoration: underline;
+}
 
-.homePage-button a:hover{
+.homePage-button a:hover,
+.link-button:hover{
       text-decoration: underline;
       color: rgba(255, 0, 0, 0.502);
 }
