@@ -54,10 +54,9 @@ export default class BarberProfile extends Component {
         const { first_name } = this.state.barberInfo
         return (
             <div className='profile-container'>
-            <section className='profile-section'>
+            <section className='profile-section'onSubmit={this.handleSelectedServices}>
                 <h1>{first_name}</h1>
                 <form className='service-time-list'
-                    onSubmit={this.handleSelectedServices}
                 ><div className='service-list'>
                         <h2>Choose your Service</h2>
                         <ServiceButtons name='services' serviceId={this.handleServiceType} />
@@ -66,8 +65,8 @@ export default class BarberProfile extends Component {
                         <h2>Pick Time</h2>
                         <TimeButtons name='time' timeId={this.handleSelectTime} />
                     </div>
-                </form>
                 <button  className='submit-haircut' type='submit'>Review/Book</button>
+                </form>
                 </section>
             </div>
         )
