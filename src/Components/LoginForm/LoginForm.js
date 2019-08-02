@@ -45,6 +45,7 @@ export default function LoginForm(props) {
                         type='text'
                         placeholder='Cody_Gill...'
                         name='user_name'
+                        value={user_name}
                         onChange={e => setUser_name(e.target.value)}
                         required
                     />
@@ -54,6 +55,7 @@ export default function LoginForm(props) {
                     <input
                         type='password'
                         name='password'
+                        value={password}
                         onChange={e => setPassword(e.target.value)}
                         required
                     />

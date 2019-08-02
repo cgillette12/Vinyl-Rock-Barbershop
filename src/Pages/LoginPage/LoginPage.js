@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import LoginForm from '../../Components/LoginForm/LoginForm'
+import { Redirect } from 'react-router-dom'
+import TokenService from '../../Services/token-service'
 import './LoginPage.css'
 
 export default class LoginPage extends Component {
@@ -12,7 +14,7 @@ export default class LoginPage extends Component {
 
     handleLoginSuccess = () => {
         const { location, history } = this.props
-        const destination = (location.state || {}).from || '/'
+        const destination = (location.state || {}).from || '/HomePage'
         history.push(destination)
     }
     render() {
