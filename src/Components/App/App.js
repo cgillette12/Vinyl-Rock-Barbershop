@@ -33,7 +33,7 @@ export default class App extends Component {
           {this.state.hasError && <p className='red'>There was an error!</p>}
           <Switch>
             <Route exact path='/' component={LandingPage} />
-            <PrivateRoute exact path='HomePage' component={HomePage}/>
+            <Route exact path='/homePage' component={HomePage}/>
             < PrivateRoute exact path='/Barbers' component={BarberPage} />
             <Route exact path='/BarbersProfile/:barberid' component={BarberProfile} />
             <Route exact path='/Login' component={LoginPage} />

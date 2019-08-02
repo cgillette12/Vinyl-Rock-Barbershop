@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-
 import './HomePage.css'
 
 export default class Homepage extends Component {
-  
     render() {
         return (
             <div className='homePage-container'>

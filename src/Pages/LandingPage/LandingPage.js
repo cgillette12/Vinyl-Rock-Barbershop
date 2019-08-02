@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
+import React ,{useContext} from 'react'
 import DemoCreds from '../../Components/DemoCreds/DemoCreds'
 import TokenService from '../../Services/token-service'
+import UserContext from '../../Contexts/UserContext'
 import { Link, Redirect } from 'react-router-dom'
 
-export default class Landingpage extends Component {
-  
-
-  render() {
+export default function Landingpage(){
+  // eslint-disable-next-line no-unused-vars
+  const userContext = useContext(UserContext)
     return (
       <div className='homePage-container'>
-        {TokenService.hasAuthToken() ? <Redirect to="/HomePage" /> : <></>}
+        {TokenService.hasAuthToken() ? <Redirect to="/homePage" /> : <></>}
         <section className='title'>
           <h1>Vinyl Rock <br /> Barbershop</h1>
           <h3> Welcome to Vinyl Rock Barbershop.</h3>
@@ -31,12 +31,9 @@ export default class Landingpage extends Component {
                 Register
               </Link>
             </button>
-            <button className='homePage-button'>
-              <DemoCreds />
-            </button>
+            <DemoCreds />
           </div>
         </section>
       </div>
     )
-  }
 }
