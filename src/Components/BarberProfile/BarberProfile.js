@@ -15,7 +15,11 @@ export default class BarberProfile extends Component {
         hasError: false
     }
     static defaultProps = {
-        match: { params: {} }
+        match: { params: {} },
+        location: {},
+        history: {
+            push: () => { },
+        },
     }
     componentDidMount() {
         const { barberid } = this.props.match.params
@@ -24,7 +28,11 @@ export default class BarberProfile extends Component {
                 return this.setState({ barberInfo: data })
             })
     }
-
+    handleAppointmentSuccess = () => {
+        const { location, history } = this.props
+        const destination = (location.state || {}).from || '/Profile'
+        history.push(destination)
+    }
     handleServiceType = ev => {
         return this.setState({ serviceSelected: ev })
     }
@@ -45,6 +53,13 @@ export default class BarberProfile extends Component {
             barber_id: id
         }
         AppointmentApiService.postAppointment(newAppointment)
+        .then(()=>{
+            this.handleAppointmentSuccess()
+        })
+        .catch(error =>{
+            console.error(error)
+            return { hasError: true }
+        })
         
             
         }
@@ -54,6 +69,7 @@ export default class BarberProfile extends Component {
         const { first_name } = this.state.barberInfo
         return (
             <div className='profile-container'>
+                {this.state.hasError && <p className='red'>There was an error!</p>}
             <section className='profile-section'onSubmit={this.handleSelectedServices}>
                 <h1>{first_name}</h1>
                 <form className='service-time-list'
