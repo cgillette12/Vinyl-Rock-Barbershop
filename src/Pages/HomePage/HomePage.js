@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import DemoCreds from '../../Components/DemoCreds/DemoCreds'
 import { Link } from 'react-router-dom'
 import './HomePage.css'
 
@@ -26,6 +27,7 @@ export default class Homepage extends Component {
                             Register
                         </Link>
                     </button>
+                    <DemoCreds/>
                 </section>
             </div>
         )
