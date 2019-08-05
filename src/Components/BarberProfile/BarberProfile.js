@@ -74,11 +74,13 @@ export default class BarberProfile extends Component {
                 <h1>{first_name}</h1>
                 <form className='service-time-list'
                 ><div className='service-list'>
-                        <h2>Choose your Service</h2>
+                        <label>Choose your Service</label>
+                        <input>
                         <ServiceButtons name='services' serviceId={this.handleServiceType} />
+                        </input>
                     </div>
                     <div className='time-list'>
-                        <h2>Pick Time</h2>
+                        <label>Pick Time</label>
                         <TimeButtons name='time' timeId={this.handleSelectTime} />
                     </div>
                 <button  className='submit-haircut' type='submit'>Review/Book</button>

@@ -11,7 +11,7 @@ export default class Barber extends Component {
                     <Link to={`/BarbersProfile/${barber.id}`}>
                         {barber.first_name}
                     </Link>
-                    <h4>Avalable Tomorrow</h4>
+                    <h4>AvailableTomorrow</h4>
                     <p>Tomorrow @ 7 a.m</p>
                 </li>
             </div>

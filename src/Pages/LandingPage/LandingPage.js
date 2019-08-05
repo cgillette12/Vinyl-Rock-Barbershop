@@ -18,7 +18,7 @@ export default function Landingpage(){
                         Vinyl Rock is all about taking the hassle out of getting your hair cut!<br />
             Once logged in you'll be able to select from one of our barbers!
             Just select the name of the barber, pick your Service and Time, then check your profile.
-            Your apointment will be updated! So Login or Sign up and never have to worry about your hair again!!!
+            Your appointment will be updated! So Login or Sign up and never have to worry about your hair again!!!
                     </p>
           <div className='homePagebutton-container'>
             <button className='homePage-button'>
