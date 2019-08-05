@@ -38,8 +38,8 @@ const AppointmentApiService = {
             .then(res =>
                 (!res.ok)
                     ? res.json().then(e => Promise.reject(e))
-                    : res.json({message:'Accpeted'})
-            )
+                    : res.json())
+            
     },
     deleteAppointment(appointmentId) {
         fetch(`${config.API_ENDPOINT}/appointment/${appointmentId}`, {

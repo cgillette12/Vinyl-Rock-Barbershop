@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import LoginForm from '../../Components/LoginForm/LoginForm'
-import { Redirect } from 'react-router-dom'
-import TokenService from '../../Services/token-service'
 import './LoginPage.css'
 
 export default class LoginPage extends Component {

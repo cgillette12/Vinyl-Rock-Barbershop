@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 import { SideNavButton } from '../Utilitys/Utils'
 import UserContext from '../../Contexts/UserContext'
-import TokenService from '../../Services/token-service'
 import './NavBar.css'
 
 export default class NavBar extends Component {

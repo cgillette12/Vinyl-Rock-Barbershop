@@ -12,7 +12,8 @@ export default class BarberProfile extends Component {
         barberInfo: [],
         serviceSelected: '',
         timeSelected: '',
-        hasError: false
+        hasError: false,
+        error: null
     }
     static defaultProps = {
         match: { params: {} },
@@ -52,12 +53,13 @@ export default class BarberProfile extends Component {
             services_id: serviceSelected,
             barber_id: id
         }
+        this.setState({ error: null })
         AppointmentApiService.postAppointment(newAppointment)
         .then(()=>{
             this.handleAppointmentSuccess()
         })
-        .catch(error =>{
-            console.error(error)
+        .catch(res =>{
+            this.setState({ error: res.error })
             return { hasError: true }
         })
         
@@ -67,22 +69,26 @@ export default class BarberProfile extends Component {
 
     render() {
         const { first_name } = this.state.barberInfo
+        const { error } = this.state
         return (
             <div className='profile-container'>
-                {this.state.hasError && <p className='red'>There was an error!</p>}
             <section className='profile-section'onSubmit={this.handleSelectedServices}>
                 <h1>{first_name}</h1>
+                <div role='alert'>
+                        {error && <p className='error'>{error}</p>}
+                </div>
                 <form className='service-time-list'
-                ><div className='service-list'>
-                        <label>Choose your Service</label>
-                        <input>
+                ><fieldset className='service-list'>
+                        <h2>Choose your Service</h2>
                         <ServiceButtons name='services' serviceId={this.handleServiceType} />
-                        </input>
-                    </div>
-                    <div className='time-list'>
-                        <label>Pick Time</label>
+                    </fieldset>
+                    <fieldset className='time-list'>
+                        <h2>Pick Time</h2>
                         <TimeButtons name='time' timeId={this.handleSelectTime} />
-                    </div>
+                    </fieldset> 
+                        <div role='alert'>
+                            {error && <p className='error'>{error}</p>}
+                        </div>
                 <button  className='submit-haircut' type='submit'>Review/Book</button>
                 </form>
                 </section>
