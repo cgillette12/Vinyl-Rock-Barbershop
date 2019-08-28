@@ -5,6 +5,7 @@ const AppointmentContext = React.createContext({
   serviceSelected: '',
   timeSelected: '',
   error: null,
+  delete: () => { },
   setError: () => { },
   clearError: () => { },
   setBarberInfo: () => { },

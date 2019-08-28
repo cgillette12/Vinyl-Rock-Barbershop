@@ -42,18 +42,15 @@ const AppointmentApiService = {
             
     },
     deleteAppointment(appointmentId) {
-        fetch(`${config.API_ENDPOINT}/appointment/${appointmentId}`, {
+       return fetch(`${config.API_ENDPOINT}/appointment/${appointmentId}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',
                 'Authorization': `bearer ${TokenService.getAuthToken()}`
+                
             },
         })
-            .then(res =>
-                (!res.ok)
-                    ? res.json().then(e => Promise.reject(e))
-                    : res.json({ message: 'Appointment canceled' })
-            )
+            .then(res => res.json())
     }
 }
 export default AppointmentApiService;
