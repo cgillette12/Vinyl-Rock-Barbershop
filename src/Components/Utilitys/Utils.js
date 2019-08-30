@@ -165,31 +165,10 @@ export class Backdrop extends Component {
 
 
 
-export class ServiceList extends Component {
-    state = {
-        barberServices: [],
-        error:null,
-        loader:true
-    }
-
-    componentDidMount() {
-        BarberApiService.getBarberServices()
-            .then(services => {
-                return this.setState({ 
-                    barberServices: services,
-                    loader:false
-                 })
-
-            })
-    }
-    sleep = milliseconds => {
-        return new Promise(resolve => setTimeout(resolve, milliseconds));
-    };
-    wait = async (milliseconds = 2000) => {
-        await this.sleep(milliseconds);
-    };
-    renderServices() {
-        return this.state.barberServices.map((barber, key) => {
+export function ServiceList(props) {
+    
+     const renderServices = () => {
+        return props.barberServices.map((barber, key) => {
             return <ul key={key}>
                 <li id={barber.id} >
                     <p>
@@ -200,17 +179,15 @@ export class ServiceList extends Component {
 
         })
     }
-    render() {
         return (
             <div className='serive-space'>
-                {this.state.loader ? <Spinner/> : this.renderServices()}
+                {props.loader ? <Spinner/> : renderServices()}
             </div>
         )
-    }
 }
 export function Spinner(){
     return (
-        <div class="lds-spinner"><div></div><div></div><div></div><div></div>
+        <div className="lds-spinner"><div></div><div></div><div></div><div></div>
         <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     )
 }
