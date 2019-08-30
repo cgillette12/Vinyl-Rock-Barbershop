@@ -16,13 +16,21 @@ import PrivateRoute from '../PrivateRoute/PrivateRoute'
 import './App.css';
 
 export default class App extends Component {
-  state = { hasError: false }
+  state = {
+    loading: true,
+    hasError: false
+  }
 
   static getDerivedStateFromError(error) {
     console.error(error)
     return { hasError: true }
   }
-
+  sleep = milliseconds => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
+  };
+  wait = async (milliseconds = 2000) => {
+    await this.sleep(milliseconds);
+  };
   render() {
     return (
       <div className='main-container'>
@@ -33,7 +41,7 @@ export default class App extends Component {
           {this.state.hasError && <p className='red'>There was an error!</p>}
           <Switch>
             <Route exact path='/' component={LandingPage} />
-            <Route exact path='/homePage' component={HomePage}/>
+            <Route exact path='/homePage' component={HomePage} />
             < PrivateRoute exact path='/Barbers' component={BarberPage} />
             <Route exact path='/BarbersProfile/:barberid' component={BarberProfile} />
             <Route exact path='/Login' component={LoginPage} />
